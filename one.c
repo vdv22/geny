@@ -10,27 +10,7 @@ struct book
 };
 
 typedef struct book Tbook;
-int crc_chk ( unsigned char* data, unsigned char length )
-  {
-	register int j;
-	register unsigned int reg_crc = 0xFFFF;
-	while (length--)
-	{
-	  reg_crc ^= *data++;
-	  for(j=0;j<8;j++)
-	   {
-		 if(reg_crc & 0x01)
-	      {
-		    reg_crc = (reg_crc >> 1) ^ 0xA001;
-	      }
-		else
-	      {
-		    reg_crc = reg_crc >> 1;
-		  }
-	   }
-	}
-	return reg_crc;
-  }
+
 
 int main(int argc, char **argv)
 {
@@ -43,7 +23,7 @@ int main(int argc, char **argv)
   Pone->size=90;
   printf("%d\n",(*Pone).hild);
   printf("%d\n",Pone->size);
- printf("CRC-%ud ",crc_chk(data,8));
+  
 	return 0;
 }
 
