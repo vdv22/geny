@@ -14,16 +14,16 @@ typedef struct book Tbook;
 
 int main(int argc, char **argv)
 {
-  Tbook one;
-  Tbook* Pone;
-  Pone=NULL;
-  Pone=&one;
-  (*Pone).hild=60;
-  
-  Pone->size=90;
-  printf("%d\n",(*Pone).hild);
-  printf("%d\n",Pone->size);
-  
+ Tbook oneBook;
+ Tbook* PoneBook=NULL;
+ PoneBook=&oneBook;
+ PoneBook->size=156;
+ PoneBook->hild=89;
+ 
+ printf("%d  %d",PoneBook->size,PoneBook->hild);
+ 
+ 
+
 	return 0;
 }
 
